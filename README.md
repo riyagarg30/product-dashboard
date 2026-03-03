@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+# 🛍 Product Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **React + TypeScript** product management dashboard that fetches products from an external API and allows users to search, sort, add, and delete products.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- Fetch products from external API
+- Search products by title
+- Sort products by price (ascending/descending)
+- Add new products locally
+- Delete products
+- Loading and error handling states
+- Clean component-based architecture
+- Custom React hooks
+- Fully typed with TypeScript
+- Responsive CSS layout
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠 Tech Stack
 
-### `npm test`
+- React
+- TypeScript
+- Fetch API
+- Custom Hooks
+- CSS (component-scoped styling)
+- Create React App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Project Structure
+src/
+├── components/
+│ ├── ProductCard.tsx
+│ ├── SearchBar.tsx
+│ ├── AddProductForm.tsx
+├── hooks/
+│ └── useProducts.ts
+├── services/
+│ └── productService.ts
+├── types/
+│ └── product.ts
+├── styles/
+│ ├── App.css
+│ ├── ProductCard.css
+│ ├── SearchBar.css
+│ └── AddProductForm.css
+├── App.tsx
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧠 Architecture Overview
 
-### `npm run eject`
+### 1️⃣ Separation of Concerns
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- API logic lives inside `services/`
+- Business logic handled via custom hook `useProducts`
+- UI components are reusable and stateless where possible
+- Types are centralized inside `types/`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2️⃣ Custom Hook (`useProducts`)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Encapsulates:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Data fetching
+- Loading state
+- Error handling
+- Product state management
 
-## Learn More
+This keeps components clean and focused on UI rendering.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3️⃣ Type Safety
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+All components and services are fully typed using TypeScript.
+
+Example:
+
+```ts
+export type Product = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+};

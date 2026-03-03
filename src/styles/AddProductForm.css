@@ -1,0 +1,23 @@
+.add-form {
+  display: flex;
+  gap: 10px;
+}
+
+.add-input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.add-btn {
+  padding: 8px 12px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
